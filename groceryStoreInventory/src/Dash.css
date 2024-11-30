@@ -1,0 +1,72 @@
+.close
+{
+    -fx-background-color:transparent;
+    -fx-cursor:hand;
+}
+
+.close:hover{
+    -fx-background-color: #f43f57; 
+}
+
+
+.minimize
+{
+    -fx-backgroun-color:transparent;
+    -fx-cursor:hand;
+}
+
+.minimize:hover{
+    -fx-background-color:#ddd;
+}
+
+.nav-form
+{
+    -fx-background-color: linear-gradient(to bottom right, #5cb3ec, #9e24d7);
+
+}
+
+.nav-btn
+{
+    -fx-background-color:transparent;
+    -fx-cursor:hand;
+    -fx-font-family: "Tahoma";
+    -fx-text-fill:#fff;
+    -fx-aligment:CENTER-LEFT;
+
+}
+.nav-btn:hover{
+    -fx-background-color:#1c1a1a0f;;
+    
+}
+.label
+{
+    -fx-text-fill: white;
+}
+
+.logout
+{
+    -fx-background-color:#537de0;
+    -fx-background-radius:10px;
+    -fx-cursor:hand;
+}
+
+
+.shadow
+{
+    -fx-effect:dropshadow(three-pass-bpx,rgba(0,0,0,0.4),5,0,0,0);
+}
+
+.white-bg
+{
+    -fx-background-color:#fff;
+    -fx-background-radius:10px;
+    -fx-border-color:black;
+    -fx-border-width:0.5px;
+}
+
+.card
+{
+    -fx-background-color:linear-gradient(to right, #5cb3ec, #9e24d7);
+    -fx-background-radius:5px;
+
+}
