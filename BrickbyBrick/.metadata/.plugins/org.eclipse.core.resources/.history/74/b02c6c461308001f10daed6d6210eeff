@@ -1,0 +1,32 @@
+package Pages;
+
+import javafx.scene.Parent;
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+
+public class ExpiredWarrantyAsset {
+	private final VBox root;
+	private final HBox buttons;
+	
+	public ExpiredWarrantyAsset() {
+		root = new VBox(20);
+		
+		buttons = new HBox(20);
+		buttons.setStyle("-fx-padding: 10px;");
+		
+		root.setStyle("-fx-background-color: cornflowerblue;"); // changes the color of the background 
+
+		Label expiredAssetLbl = new Label("Asset(s) with expired warranty");
+		expiredAssetLbl.setStyle("-fx-font-size: 24px;"); // Change the font size of mainLbl
+		
+		Button homeButton = new Button("Return to home page");
+
+		
+	}
+
+	// return the VBox/stage 
+    public Parent getRoot() {
+        return root;
+    }
+}

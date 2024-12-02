@@ -1,0 +1,15 @@
+package Pages;
+
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+
+public class WarrantyAlert {
+	private final VBox root;
+    private final HBox buttons;
+    
+    public WarrantyAlert() {
+    	root = new VBox(20);
+    	buttons = new HBox(20);
+    }
+
+}

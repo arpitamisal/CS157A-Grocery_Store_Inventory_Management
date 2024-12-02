@@ -1,0 +1,170 @@
+package Pages;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+
+import java.io.*;
+import java.time.LocalDate;
+import java.util.Arrays;
+
+public class SearchAsset {
+    private final VBox searchAssetInputs;
+    private final HBox buttons3;
+    private final Stage primaryStage;
+    private final ListView<String> searchResultsListView;
+    private ObservableList<String> categories;
+    private ObservableList<String> locations;
+
+    public SearchAsset(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+        searchAssetInputs = new VBox(20);
+        searchAssetInputs.setStyle("-fx-padding: 10px; -fx-background-color: cornflowerblue;");
+
+        buttons3 = new HBox(20);
+        buttons3.setAlignment(Pos.CENTER);
+
+        Label SearchAssetLbl = new Label("Search Asset(s)");
+        SearchAssetLbl.setStyle("-fx-font-size: 24px;");
+        TextField searchField = new TextField();
+        searchResultsListView = new ListView<>();
+        searchResultsListView.setPrefSize(400, 300);
+
+        Button homePageButton = new Button("Return to Homepage");
+        Button searchAssetButton = new Button("Search");
+
+        homePageButton.setOnAction(e -> {
+            HomeScreen homeScreen = new HomeScreen(primaryStage);
+            primaryStage.setScene(new Scene(homeScreen.getRoot(), 800, 800));
+            primaryStage.setTitle("Home Page");
+        });
+
+        searchAssetButton.setOnAction(e -> performSearch(searchField.getText().trim()));
+
+        buttons3.getChildren().addAll(homePageButton, searchAssetButton);
+        searchAssetInputs.getChildren().addAll(SearchAssetLbl, searchField, searchResultsListView, buttons3);
+
+        // Initialize categories and locations
+        categories = FXCollections.observableArrayList("Office", "Industrial", "Personal");
+        locations = FXCollections.observableArrayList("New York", "California", "Texas");
+    }
+
+    private void performSearch(String searchSubstring) {
+        ObservableList<String> matchingAssets = FXCollections.observableArrayList();
+        try (BufferedReader reader = new BufferedReader(new FileReader("asset_data.csv"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts[0].contains(searchSubstring)) {
+                    matchingAssets.add(line);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        searchResultsListView.setItems(matchingAssets);
+        searchResultsListView.setCellFactory(param -> new AssetListCell());
+    }
+
+    private void editAsset(String asset) {
+        if (searchResultsListView.getSelectionModel().getSelectedIndex() == -1) {
+            System.out.println("No asset selected for editing.");
+            return;
+        }
+
+        String[] parts = asset.split(",");
+
+        Stage editStage = new Stage();
+        VBox editLayout = new VBox(10);
+        editLayout.setAlignment(Pos.CENTER);
+        editLayout.setStyle("-fx-background-color: cornflowerblue;");
+
+        TextField assetNameField = new TextField(parts.length > 0 ? parts[0] : "");
+        ComboBox<String> assetCategoryComboBox = new ComboBox<>(categories);
+        ComboBox<String> assetLocationComboBox = new ComboBox<>(locations);
+        DatePicker purchaseDatePicker = new DatePicker(parts.length > 3 ? LocalDate.parse(parts[3]) : null);
+        TextField assetDescriptionField = new TextField(parts.length > 4 ? parts[4] : "");
+        TextField assetPurchaseValueField = new TextField(parts.length > 5 ? parts[5] : "");
+        DatePicker warrantyDatePicker = new DatePicker(parts.length > 6 ? LocalDate.parse(parts[6]) : null);
+
+        assetCategoryComboBox.setValue(parts.length > 1 ? parts[1] : "");
+        assetLocationComboBox.setValue(parts.length > 2 ? parts[2] : "");
+
+        editLayout.getChildren().addAll(
+            new HBox(new Label("Asset Name: "), assetNameField),
+            new HBox(new Label("Asset Category: "), assetCategoryComboBox),
+            new HBox(new Label("Asset Location: "), assetLocationComboBox),
+            new HBox(new Label("Purchase Date: "), purchaseDatePicker),
+            new HBox(new Label("Asset Description: "), assetDescriptionField),
+            new HBox(new Label("Purchase Value: "), assetPurchaseValueField),
+            new HBox(new Label("Warranty Date: "), warrantyDatePicker)
+        );
+
+        Button saveButton = new Button("Save");
+        saveButton.setOnAction(e -> {
+            String editedAsset = String.join(",", 
+                assetNameField.getText(),
+                assetCategoryComboBox.getValue(),
+                assetLocationComboBox.getValue(),
+                purchaseDatePicker.getValue() == null ? "" : purchaseDatePicker.getValue().toString(),
+                assetDescriptionField.getText(),
+                assetPurchaseValueField.getText(),
+                warrantyDatePicker.getValue() == null ? "" : warrantyDatePicker.getValue().toString()
+            );
+
+            int selectedIndex = searchResultsListView.getSelectionModel().getSelectedIndex();
+            searchResultsListView.getItems().set(selectedIndex, editedAsset);
+            updateAsset(asset, editedAsset);
+            editStage.close();
+        });
+
+        editLayout.getChildren().add(saveButton);
+        Scene editScene = new Scene(editLayout, 600, 600);
+        editStage.setScene(editScene);
+        editStage.initModality(Modality.APPLICATION_MODAL);
+        editStage.showAndWait();
+    }
+
+    private void updateAsset(String oldAsset, String newAsset) {
+        // Update asset logic goes here
+    }
+
+    private class AssetListCell extends ListCell<String> {
+        private final Button deleteButton = new Button("Delete");
+        private final Button editButton = new Button("Edit");
+
+        public AssetListCell() {
+            deleteButton.setOnAction(event -> {
+                String asset = getItem();
+                getListView().getItems().remove(asset);
+                deleteAsset(asset);
+            });
+
+            editButton.setOnAction(event -> {
+                String asset = getItem();
+                editAsset(asset);
+            });
+
+            HBox buttons = new HBox(10);
+            buttons.getChildren().addAll(editButton, deleteButton);
+            setGraphic(buttons);
+        }
+
+        @Override
+        protected void updateItem(String item, boolean empty) {
+            super.updateItem(item, empty);
+            setText(empty ? null : item);
+        }
+    }
+
+    public Parent getRoot() {
+        return searchAssetInputs;
+    }
+}

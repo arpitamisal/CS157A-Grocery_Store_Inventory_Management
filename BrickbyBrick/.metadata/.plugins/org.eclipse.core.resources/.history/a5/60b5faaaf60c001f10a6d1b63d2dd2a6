@@ -1,0 +1,33 @@
+package application;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import Pages.WarrantyAlert;
+
+public class Main extends Application {
+    @Override
+    public void start(Stage primaryStage) {
+        try {
+            // Create an instance of the WarrantyAlert
+            WarrantyAlert warrantyAlert = new WarrantyAlert();
+
+            // Setup the scene and stage for the alert
+            primaryStage.setScene(new Scene(warrantyAlert.getRoot(), 600, 600));
+            primaryStage.setTitle("Alert - Warranty Expiry");
+
+            // You can still make this primary stage behave like a dialog if desired:
+            primaryStage.initModality(Modality.APPLICATION_MODAL);  // Uncomment to make the window modal
+
+            // Show the primary stage with the alert content
+            primaryStage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}

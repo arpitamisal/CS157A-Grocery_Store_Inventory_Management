@@ -1,0 +1,159 @@
+package Pages;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
+
+public class SearchByLocation {
+    private final VBox root;
+    private final HBox buttons;
+    private final ListView<String> resultsListView;
+    private final ComboBox<String> assetLocationDropdown;
+    private final Map<String, String> assetDetailsMap = new HashMap<>();
+
+    public SearchByLocation() {
+    	// change the appearance of the UI
+        root = new VBox(20);
+        root.setStyle("-fx-padding: 10px; -fx-background-color: cornflowerblue;");
+
+        buttons = new HBox(20);
+        buttons.setAlignment(Pos.CENTER);
+
+        // create labels and drop down list 
+        Label locationMainLbl = new Label("Search by Location");
+        locationMainLbl.setStyle("-fx-font-size: 24px;");
+
+        Label assetLocationDropLbl = new Label("Select Asset Location:");
+        assetLocationDropdown = new ComboBox<>();
+        resultsListView = new ListView<>();
+        resultsListView.setPrefSize(400, 300);
+
+        ObservableList<String> locations = readLocationsFromFile("location_data.txt");
+        assetLocationDropdown.setItems(locations);
+
+        // create buttons and add functionality
+        Button homeButton = new Button("Return to Homepage");
+        Button searchButton = new Button("Search");
+
+        homeButton.setOnAction(e -> {
+            Stage primaryStage = (Stage) homeButton.getScene().getWindow();
+            primaryStage.setScene(new Scene(new HomeScreen(primaryStage).getRoot(), 800, 800));
+            primaryStage.setTitle("Home Page");
+        });
+
+        searchButton.setOnAction(e -> {
+            String selectedLocation = assetLocationDropdown.getValue();
+            performSearch(selectedLocation);
+        });
+
+        // add all of the nodes to the HBox and VBox
+        buttons.getChildren().addAll(homeButton, searchButton);
+        root.getChildren().addAll(locationMainLbl, assetLocationDropLbl, assetLocationDropdown, resultsListView, buttons);
+
+        setupListViewDoubleClick();
+    }
+
+    // listener function to open a details window upon double click
+    private void setupListViewDoubleClick() {
+        resultsListView.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2 && !resultsListView.getSelectionModel().isEmpty()) {
+                String selectedItem = resultsListView.getSelectionModel().getSelectedItem();
+                if (assetDetailsMap.containsKey(selectedItem)) {
+                    openDetailWindow(assetDetailsMap.get(selectedItem));
+                }
+            }
+        });
+    }
+
+    private void openDetailWindow(String assetDetails) {
+        String[] parts = assetDetails.split(",");
+
+        Stage detailStage = new Stage();
+        VBox layout = new VBox(10);
+        layout.setAlignment(Pos.CENTER);
+        layout.setStyle("-fx-background-color: cornflowerblue; -fx-padding: 20;");
+
+        // create labels for each of the asset variables
+        Label assetNameLabel = new Label("Asset Name: " + (parts.length > 0 ? parts[0] : ""));
+        Label assetCategoryLabel = new Label("Asset Category: " + (parts.length > 1 ? parts[1] : ""));
+        Label assetLocationLabel = new Label("Asset Location: " + (parts.length > 2 ? parts[2] : ""));
+        Label purchaseDateLabel = new Label("Purchase Date: " + (parts.length > 3 ? parts[3] : ""));
+        Label assetDescriptionLabel = new Label("Asset Description: " + (parts.length > 4 ? parts[4] : ""));
+        Label assetPurchaseValueLabel = new Label("Purchase Value: " + (parts.length > 5 ? parts[5] : ""));
+        Label warrantyDateLabel = new Label("Warranty Date: " + (parts.length > 6 ? parts[6] : ""));
+
+        layout.getChildren().addAll(
+            assetNameLabel,
+            assetCategoryLabel,
+            assetLocationLabel,
+            purchaseDateLabel,
+            assetDescriptionLabel,
+            assetPurchaseValueLabel,
+            warrantyDateLabel
+        );
+
+        // button to close the details window
+        Button closeButton = new Button("Close");
+        closeButton.setOnAction(e -> detailStage.close());
+        layout.getChildren().add(closeButton);
+
+        Scene scene = new Scene(layout, 400, 300);
+        detailStage.setScene(scene);
+        detailStage.setTitle("Asset Details");
+        detailStage.initModality(Modality.APPLICATION_MODAL);
+        detailStage.showAndWait();
+    }
+
+    // function to read from a file 
+    private ObservableList<String> readLocationsFromFile(String filename) {
+        ObservableList<String> items = FXCollections.observableArrayList();
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                items.add(line.trim());
+            }
+        } catch (IOException e) {
+            System.err.println("Failed to read locations from file: " + e.getMessage());
+        }
+        return items;
+    }
+
+    // function to search for assets based on the location
+    private ObservableList<String> searchByLocation(String filename, String location) {
+        ObservableList<String> filteredAssets = FXCollections.observableArrayList();
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts.length > 2 && parts[2].trim().equals(location.trim())) {
+                    String displayKey = parts[0] + " - " + parts[2] + " - Expired: " + parts[6];
+                    assetDetailsMap.put(displayKey, line);
+                    filteredAssets.add(displayKey);
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Failed to search assets: " + e.getMessage());
+        }
+        return filteredAssets;
+    }
+
+    private void performSearch(String location) {
+        resultsListView.setItems(searchByLocation("asset_data.csv", location));
+    }
+
+    // return the root of this class to allow for other classes to access the stage 
+    public Parent getRoot() {
+        return root;
+    }
+}

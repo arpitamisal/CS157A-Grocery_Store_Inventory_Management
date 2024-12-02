@@ -1,0 +1,9 @@
+package Pages;
+
+public class ExpiredWarrantyAsset {
+	
+	public ExpiredWarrantyAsset() {
+		
+	}
+
+}

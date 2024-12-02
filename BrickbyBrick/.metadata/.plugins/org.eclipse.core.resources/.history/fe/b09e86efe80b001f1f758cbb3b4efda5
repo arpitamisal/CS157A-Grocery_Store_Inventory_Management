@@ -1,0 +1,99 @@
+package Pages;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class SearchByLocation {
+    private final VBox root;
+    private final HBox buttons;
+    private final ListView<String> resultsListView;
+
+    public SearchByLocation() {
+        root = new VBox(20);
+        root.setStyle("-fx-padding: 10px; -fx-background-color: cornflowerblue;");
+
+        buttons = new HBox(20);
+        buttons.setAlignment(Pos.CENTER);
+
+        // Create UI elements
+        Label locationMainLbl = new Label("Search Asset(s) by Location");
+        locationMainLbl.setStyle("-fx-font-size: 24px;");
+
+        Label assetLocationDropLbl = new Label("Select Asset Location:");
+        ComboBox<String> assetLocationDropdown = new ComboBox<>();
+        resultsListView = new ListView<>();
+        resultsListView.setPrefSize(400, 300);
+
+        // Populate ComboBox with locations
+        ObservableList<String> locations = readLocationsFromFile("location_data.txt");
+        assetLocationDropdown.setItems(locations);
+
+        // Create buttons
+        Button homeButton = new Button("Return to Homepage");
+        Button searchButton = new Button("Search");
+
+        // Set button actions
+        homeButton.setOnAction(e -> {
+            Stage primaryStage = (Stage) homeButton.getScene().getWindow();
+            primaryStage.setScene(new Scene(new HomeScreen(primaryStage).getRoot(), 800, 800));
+            primaryStage.setTitle("Home Page");
+        });
+
+        searchButton.setOnAction(e -> {
+            String selectedLocation = assetLocationDropdown.getValue();
+            resultsListView.setItems(searchByLocation("asset_data.csv", selectedLocation));
+        });
+
+        buttons.getChildren().addAll(homeButton, searchButton);
+        root.getChildren().addAll(locationMainLbl, assetLocationDropLbl, assetLocationDropdown, resultsListView, buttons);
+    }
+
+    public Parent getRoot() {
+        return root;
+    }
+
+    // Read locations from file
+    private ObservableList<String> readLocationsFromFile(String filename) {
+        ObservableList<String> items = FXCollections.observableArrayList();
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                items.add(line.trim());
+            }
+        } catch (IOException e) {
+            System.err.println("Failed to read locations from file: " + e.getMessage());
+        }
+        return items;
+    }
+
+    // Search by location from CSV
+    private ObservableList<String> searchByLocation(String filename, String location) {
+        ObservableList<String> filteredAssets = FXCollections.observableArrayList();
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts.length > 2 && parts[2].trim().equals(location.trim())) {
+                    filteredAssets.add(line); // Adds the entire line or format as needed
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Failed to search assets: " + e.getMessage());
+        }
+        return filteredAssets;
+    }
+}
