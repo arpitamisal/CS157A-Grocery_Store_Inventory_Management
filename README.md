@@ -24,7 +24,6 @@ The goals of this project is to make an interactive application that provides se
 ## EER Diagram
 ![image](https://github.com/user-attachments/assets/bb82fa83-d09c-41cf-a044-56fd177f47bc)
 
-## Link to Presentation Video
-- Click the box for the product Presentation!!!
+## Link to Presentation Video (Click Box for presentation!)
 [![Watch the video](https://img.youtube.com/vi/J8ENdFU3oec/0.jpg)](https://www.youtube.com/watch?v=J8ENdFU3oec)
 
