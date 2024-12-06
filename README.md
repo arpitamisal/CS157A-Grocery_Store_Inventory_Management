@@ -10,7 +10,11 @@
   
 
 ## prerequisites for running project
-steps for properly running the program to plug and play the application
+In order to run the program properly, please install the following dependencies:
+- JavaFX
+- Eclipse
+- mySQL
+- Java SDK
 ## Goals of project
 The goals of this project is to make an interactive application that provides services in inventory and order maangement for grocery store items. Additionally, the program allows for stock tracking. customer orders, supplier management and ? Each page will have buttons allowing for removal, addition, updating and viewing for each item. Reports will be generated allowing for information on sales, report
 ## EER Diagram
