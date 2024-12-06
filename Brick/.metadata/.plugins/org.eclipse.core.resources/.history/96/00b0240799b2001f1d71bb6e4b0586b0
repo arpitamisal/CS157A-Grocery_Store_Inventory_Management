@@ -1,0 +1,35 @@
+public class Inventory {
+    private final int inventoryId;
+    private final boolean reorderNeeded;
+    private final Product product; // Reference to associated Product object
+
+    public Inventory(int inventoryId, boolean reorderNeeded, Product product) {
+        this.inventoryId = inventoryId;
+        this.reorderNeeded = reorderNeeded;
+        this.product = product;
+    }
+
+    public int getInventoryId() {
+        return inventoryId;
+    }
+
+    public boolean isReorderNeeded() {
+        return reorderNeeded;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public int getProductId() {
+        return product.getProductId();
+    }
+
+    public String getProductName() {
+        return product.getProductName();
+    }
+
+    public int getStockLevel() {
+        return product.getStockQuantity();
+    }
+}

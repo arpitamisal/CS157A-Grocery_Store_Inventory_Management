@@ -1,0 +1,48 @@
+package models;
+
+public class Inventory {
+    private int inventoryId;
+    private String productName; // Derived from Product
+    private int stockLevel; // Derived from Product
+    private boolean reorderNeeded;
+
+    public Inventory(int inventoryId, String productName, int stockLevel, boolean reorderNeeded) {
+        this.inventoryId = inventoryId;
+        this.productName = productName;
+        this.stockLevel = stockLevel;
+        this.reorderNeeded = reorderNeeded;
+    }
+
+    public int getInventoryId() {
+        return inventoryId;
+    }
+
+    public void setInventoryId(int inventoryId) {
+        this.inventoryId = inventoryId;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public int getStockLevel() {
+        return stockLevel;
+    }
+
+    public void setStockLevel(int stockLevel) {
+        this.stockLevel = stockLevel;
+    }
+
+    public boolean isReorderNeeded() {
+        return reorderNeeded;
+    }
+
+    public void setReorderNeeded(boolean reorderNeeded) {
+        this.reorderNeeded = reorderNeeded;
+    }
+}
+

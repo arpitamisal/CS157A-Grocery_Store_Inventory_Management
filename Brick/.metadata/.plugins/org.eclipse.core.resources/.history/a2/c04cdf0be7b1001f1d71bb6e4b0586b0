@@ -1,0 +1,140 @@
+package Pages;
+
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.stage.Stage;
+
+public class ManageDiscounts {
+
+    // Declaring variables
+    private final VBox root;
+    private final VBox buttons;
+    private final HBox mainLayout; // For splitting buttons and TableView
+    private final VBox leftPane; // For buttons and search bar
+    private final Stage primaryStage;
+    private final TableView<Object> discountsTable;
+
+    public ManageDiscounts(Stage primaryStage) {
+
+        // Initialize variables
+        this.primaryStage = primaryStage;
+        root = new VBox(20);
+        root.setPadding(new Insets(10));
+        root.setAlignment(Pos.TOP_CENTER);
+        root.setStyle("-fx-background-color: cornflowerblue;");
+
+        // Title Label
+        Label mainLabel = new Label("Manage Discounts");
+        mainLabel.setStyle("-fx-font-size: 24px;");
+
+        // Search Bar
+        HBox searchBar = new HBox(10);
+        searchBar.setAlignment(Pos.CENTER_LEFT);
+        TextField searchField = new TextField();
+        searchField.setPromptText("Search discounts...");
+        Button searchButton = new Button("Search");
+        searchBar.getChildren().addAll(searchField, searchButton);
+
+        // Buttons
+        buttons = new VBox(20);
+        buttons.setPadding(new Insets(10));
+        Button createDiscountsButton = new Button("Create Discounts");
+        Button updateDiscountsButton = new Button("Update Discounts");
+        Button deleteDiscountsButton = new Button("Delete Discounts");
+        Button returnToHomePageButton = new Button("Return to Homepage");
+        buttons.getChildren().addAll(createDiscountsButton, updateDiscountsButton, deleteDiscountsButton, returnToHomePageButton);
+        buttons.setAlignment(Pos.TOP_LEFT);
+
+        // Combine Search Bar and Buttons into Left Pane
+        leftPane = new VBox(20);
+        leftPane.getChildren().addAll(searchBar, buttons);
+        leftPane.setAlignment(Pos.TOP_LEFT);
+
+        // TableView for discounts data
+        discountsTable = new TableView<>();
+        discountsTable.setPrefWidth(400);
+        discountsTable.setPlaceholder(new Label("No discounts found."));
+        setupTableColumns();
+
+        // Main Layout: Buttons on the left, TableView on the right
+        mainLayout = new HBox(20, leftPane, discountsTable);
+        mainLayout.setAlignment(Pos.TOP_LEFT);
+        mainLayout.setPadding(new Insets(10));
+
+        // Add components to the root
+        root.getChildren().addAll(mainLabel, mainLayout);
+
+        // Set button actions
+        setButtonActions(searchField, searchButton, createDiscountsButton, updateDiscountsButton, deleteDiscountsButton, returnToHomePageButton);
+    }
+
+    // Setup columns for the TableView
+    private void setupTableColumns() {
+        TableColumn<Object, Integer> discountIdColumn = new TableColumn<>("Discount ID");
+        discountIdColumn.setPrefWidth(100);
+
+        TableColumn<Object, Integer> productIdColumn = new TableColumn<>("Product ID");
+        productIdColumn.setPrefWidth(100);
+
+        TableColumn<Object, Double> percentageColumn = new TableColumn<>("Discount %");
+        percentageColumn.setPrefWidth(100);
+
+        TableColumn<Object, String> startDateColumn = new TableColumn<>("Start Date");
+        startDateColumn.setPrefWidth(150);
+
+        TableColumn<Object, String> endDateColumn = new TableColumn<>("End Date");
+        endDateColumn.setPrefWidth(150);
+
+        discountsTable.getColumns().addAll(discountIdColumn, productIdColumn, percentageColumn, startDateColumn, endDateColumn);
+    }
+
+    // Set button actions and search functionality
+    private void setButtonActions(TextField searchField, Button searchButton, Button createDiscountsButton,
+                                   Button updateDiscountsButton, Button deleteDiscountsButton,
+                                   Button returnToHomePageButton) {
+
+        searchButton.setOnAction(e -> {
+            String searchText = searchField.getText();
+            if (!searchText.isEmpty()) {
+                System.out.println("Searching for: " + searchText);
+                // Placeholder for database query logic
+                discountsTable.getItems().clear();
+                // Add dummy data for demonstration
+                discountsTable.getItems().addAll("Example Discount Data");
+            } else {
+                System.out.println("Search field is empty.");
+            }
+        });
+
+        createDiscountsButton.setOnAction(e -> {
+            System.out.println("Create Discounts button clicked.");
+            // Placeholder for future functionality
+        });
+
+        updateDiscountsButton.setOnAction(e -> {
+            System.out.println("Update Discounts button clicked.");
+            // Placeholder for future functionality
+        });
+
+        deleteDiscountsButton.setOnAction(e -> {
+            System.out.println("Delete Discounts button clicked.");
+            // Placeholder for future functionality
+        });
+
+        returnToHomePageButton.setOnAction(e -> {
+            System.out.println("Return to Homepage button clicked.");
+            EmployeeHomePage empHomePage = new EmployeeHomePage(primaryStage);
+            primaryStage.setScene(new Scene(empHomePage.getRoot(), 600, 600));
+            primaryStage.setTitle("Homepage");
+        });
+    }
+
+    // Function to return the root node
+    public Parent getRoot() {
+        return root;
+    }
+}

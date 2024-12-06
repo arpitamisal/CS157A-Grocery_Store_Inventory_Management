@@ -1,0 +1,139 @@
+package Pages;
+
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.stage.Stage;
+
+public class ViewCustomerInformation {
+
+    // Declaring variables
+    private final VBox root;
+    private final VBox buttons;
+    private final HBox mainLayout; // For splitting buttons and TableView
+    private final VBox leftPane; // For buttons and search bar
+    private final Stage primaryStage;
+    private final TableView<Object> customerTable;
+
+    public ViewCustomerInformation(Stage primaryStage) {
+
+        // Initialize variables
+        this.primaryStage = primaryStage;
+        root = new VBox(20);
+        root.setPadding(new Insets(10));
+        root.setAlignment(Pos.TOP_CENTER);
+        root.setStyle("-fx-background-color: cornflowerblue;");
+
+        // Title Label
+        Label mainLabel = new Label("View Customer Information");
+        mainLabel.setStyle("-fx-font-size: 24px;");
+
+        // Search Bar
+        HBox searchBar = new HBox(10);
+        searchBar.setAlignment(Pos.CENTER_LEFT);
+        TextField searchField = new TextField();
+        searchField.setPromptText("Search customers...");
+        Button searchButton = new Button("Search");
+        searchBar.getChildren().addAll(searchField, searchButton);
+
+        // Buttons
+        buttons = new VBox(20);
+        buttons.setPadding(new Insets(10));
+        Button viewCustomerProfilesButton = new Button("View Customer Profiles");
+        Button updateCustomerProfilesButton = new Button("Update Customer Profiles");
+        Button addCustomerButton = new Button("Add Customer"); // New button for adding customers
+        Button returnToHomePageButton = new Button("Return to Homepage");
+        buttons.getChildren().addAll(viewCustomerProfilesButton, updateCustomerProfilesButton, addCustomerButton, returnToHomePageButton);
+        buttons.setAlignment(Pos.TOP_LEFT);
+
+        // Combine Search Bar and Buttons into Left Pane
+        leftPane = new VBox(20);
+        leftPane.getChildren().addAll(searchBar, buttons);
+        leftPane.setAlignment(Pos.TOP_LEFT);
+
+        // TableView for customer data
+        customerTable = new TableView<>();
+        customerTable.setPrefWidth(800); // Increased width for better visibility
+        customerTable.setPlaceholder(new Label("No customer data found."));
+        setupTableColumns();
+
+        // Main Layout: Buttons on the left, TableView on the right
+        mainLayout = new HBox(20, leftPane, customerTable);
+        mainLayout.setAlignment(Pos.TOP_LEFT);
+        mainLayout.setPadding(new Insets(10));
+
+        // Add components to the root
+        root.getChildren().addAll(mainLabel, mainLayout);
+
+        // Set button actions
+        setButtonActions(searchField, searchButton, viewCustomerProfilesButton, updateCustomerProfilesButton, addCustomerButton, returnToHomePageButton);
+    }
+
+    // Setup columns for the TableView
+    private void setupTableColumns() {
+        TableColumn<Object, Integer> customerIdColumn = new TableColumn<>("Customer ID");
+        customerIdColumn.setPrefWidth(100);
+
+        TableColumn<Object, String> firstNameColumn = new TableColumn<>("First Name");
+        firstNameColumn.setPrefWidth(150);
+
+        TableColumn<Object, String> lastNameColumn = new TableColumn<>("Last Name");
+        lastNameColumn.setPrefWidth(150);
+
+        TableColumn<Object, String> emailColumn = new TableColumn<>("Email");
+        emailColumn.setPrefWidth(200);
+
+        TableColumn<Object, String> phoneColumn = new TableColumn<>("Phone");
+        phoneColumn.setPrefWidth(150);
+
+        customerTable.getColumns().addAll(customerIdColumn, firstNameColumn, lastNameColumn, emailColumn, phoneColumn);
+    }
+
+    // Set button actions and search functionality
+    private void setButtonActions(TextField searchField, Button searchButton, Button viewCustomerProfilesButton,
+                                   Button updateCustomerProfilesButton, Button addCustomerButton, Button returnToHomePageButton) {
+
+        searchButton.setOnAction(e -> {
+            String searchText = searchField.getText();
+            if (!searchText.isEmpty()) {
+                System.out.println("Searching for: " + searchText);
+                // Placeholder for database query logic
+                customerTable.getItems().clear();
+                // Add dummy data for demonstration
+                customerTable.getItems().addAll("Example Customer Data");
+            } else {
+                System.out.println("Search field is empty.");
+            }
+        });
+
+        viewCustomerProfilesButton.setOnAction(e -> {
+            System.out.println("View Customer Profiles button clicked.");
+            // Placeholder for future functionality
+        });
+
+        updateCustomerProfilesButton.setOnAction(e -> {
+            System.out.println("Update Customer Profiles button clicked.");
+            // Placeholder for future functionality
+        });
+
+        addCustomerButton.setOnAction(e -> {
+            System.out.println("Add Customer button clicked.");
+            // Placeholder for future functionality (e.g., opening a new form to add customer details)
+        });
+
+        returnToHomePageButton.setOnAction(e -> {
+            System.out.println("Return to Homepage button clicked.");
+            EmployeeHomePage empHomePage = new EmployeeHomePage(primaryStage);
+            primaryStage.setScene(new Scene(empHomePage.getRoot(), 1000, 800)); // Increased stage size
+            primaryStage.setTitle("Homepage");
+        });
+    }
+
+    // Function to return the root node
+    public Parent getRoot() {
+        return root;
+    }
+}

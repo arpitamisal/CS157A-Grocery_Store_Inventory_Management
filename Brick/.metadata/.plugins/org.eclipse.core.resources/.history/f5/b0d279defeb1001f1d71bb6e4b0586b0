@@ -1,0 +1,184 @@
+package Pages;
+
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.stage.Stage;
+import models.Employee;
+import application.DatabaseUtility;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class ViewCustomerInformation {
+
+    // Declaring variables
+    private final VBox root;
+    private final VBox buttons;
+    private final HBox mainLayout; // For splitting buttons and TableView
+    private final VBox leftPane; // For buttons and search bar
+    private final Stage primaryStage;
+    private final TableView<Employee> employeeTable;
+
+    public ViewCustomerInformation(Stage primaryStage) {
+
+        // Initialize variables
+        this.primaryStage = primaryStage;
+        root = new VBox(20);
+        root.setPadding(new Insets(10));
+        root.setAlignment(Pos.TOP_CENTER);
+        root.setStyle("-fx-background-color: cornflowerblue;");
+
+        // Title Label
+        Label mainLabel = new Label("View Employee Information");
+        mainLabel.setStyle("-fx-font-size: 24px;");
+
+        // Search Bar
+        HBox searchBar = new HBox(10);
+        searchBar.setAlignment(Pos.CENTER_LEFT);
+        TextField searchField = new TextField();
+        searchField.setPromptText("Search employees...");
+        Button searchButton = new Button("Search");
+        searchBar.getChildren().addAll(searchField, searchButton);
+
+        // Buttons
+        buttons = new VBox(20);
+        buttons.setPadding(new Insets(10));
+        Button viewEmployeeProfilesButton = new Button("View Employee Profiles");
+        Button updateEmployeeProfilesButton = new Button("Update Employee Profiles");
+        Button addEmployeeButton = new Button("Add Employee");
+        Button returnToHomePageButton = new Button("Return to Homepage");
+        buttons.getChildren().addAll(viewEmployeeProfilesButton, updateEmployeeProfilesButton, addEmployeeButton, returnToHomePageButton);
+        buttons.setAlignment(Pos.TOP_LEFT);
+
+        // Combine Search Bar and Buttons into Left Pane
+        leftPane = new VBox(20);
+        leftPane.getChildren().addAll(searchBar, buttons);
+        leftPane.setAlignment(Pos.TOP_LEFT);
+
+        // TableView for employee data
+        employeeTable = new TableView<>();
+        employeeTable.setPrefWidth(770); // Increased width for better visibility
+        employeeTable.setPlaceholder(new Label("No employee data found."));
+        setupTableColumns();
+
+        // Main Layout: Buttons on the left, TableView on the right
+        mainLayout = new HBox(20, leftPane, employeeTable);
+        mainLayout.setAlignment(Pos.TOP_LEFT);
+        mainLayout.setPadding(new Insets(10));
+
+        // Add components to the root
+        root.getChildren().addAll(mainLabel, mainLayout);
+
+        // Set button actions
+        setButtonActions(searchField, searchButton, viewEmployeeProfilesButton, updateEmployeeProfilesButton, addEmployeeButton, returnToHomePageButton);
+    }
+
+    // Setup columns for the TableView
+    private void setupTableColumns() {
+        TableColumn<Employee, Number> employeeIdColumn = new TableColumn<>("Employee ID");
+        employeeIdColumn.setCellValueFactory(data -> new SimpleIntegerProperty(data.getValue().getEmployeeId()));
+        employeeIdColumn.setPrefWidth(100);
+
+        TableColumn<Employee, String> firstNameColumn = new TableColumn<>("First Name");
+        firstNameColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getFirstName()));
+        firstNameColumn.setPrefWidth(150);
+
+        TableColumn<Employee, String> lastNameColumn = new TableColumn<>("Last Name");
+        lastNameColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getLastName()));
+        lastNameColumn.setPrefWidth(150);
+
+        TableColumn<Employee, String> positionColumn = new TableColumn<>("Position");
+        positionColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getPosition()));
+        positionColumn.setPrefWidth(150);
+
+        TableColumn<Employee, Number> salaryColumn = new TableColumn<>("Salary");
+        salaryColumn.setCellValueFactory(data -> new SimpleDoubleProperty(data.getValue().getSalary()));
+        salaryColumn.setPrefWidth(150);
+
+        TableColumn<Employee, String> hireDateColumn = new TableColumn<>("Hire Date");
+        hireDateColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getHireDate().toString()));
+        hireDateColumn.setPrefWidth(150);
+
+        employeeTable.getColumns().addAll(employeeIdColumn, firstNameColumn, lastNameColumn, positionColumn, salaryColumn, hireDateColumn);
+    }
+
+    // Set button actions and fetch data from Employee table
+    private void setButtonActions(TextField searchField, Button searchButton, Button viewEmployeeProfilesButton,
+                                   Button updateEmployeeProfilesButton, Button addEmployeeButton, Button returnToHomePageButton) {
+
+        searchButton.setOnAction(e -> {
+            String searchText = searchField.getText();
+            if (!searchText.isEmpty()) {
+                System.out.println("Searching for: " + searchText);
+                // Placeholder for search functionality
+            } else {
+                System.out.println("Search field is empty.");
+            }
+        });
+
+        viewEmployeeProfilesButton.setOnAction(e -> {
+            System.out.println("View Employee Profiles button clicked.");
+
+            // SQL query to retrieve employee profiles
+            String sqlQuery = "SELECT employee_id, first_name, last_name, position, salary, hire_date FROM Employee";
+
+            // Clear the table before adding new data
+            employeeTable.getItems().clear();
+
+            // Execute query and fetch data
+            try (Connection connection = DatabaseUtility.getConnection();
+                 PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
+                 ResultSet resultSet = preparedStatement.executeQuery()) {
+
+                while (resultSet.next()) {
+                    // Create Employee object and add to TableView
+                    Employee employee = new Employee(
+                        resultSet.getInt("employee_id"),
+                        resultSet.getString("first_name"),
+                        resultSet.getString("last_name"),
+                        resultSet.getString("position"),
+                        resultSet.getDouble("salary"),
+                        resultSet.getDate("hire_date")
+                    );
+                    employeeTable.getItems().add(employee);
+                }
+
+                System.out.println("Query executed successfully.");
+
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        updateEmployeeProfilesButton.setOnAction(e -> {
+            System.out.println("Update Employee Profiles button clicked.");
+            // Placeholder for future functionality
+        });
+
+        addEmployeeButton.setOnAction(e -> {
+            System.out.println("Add Employee button clicked.");
+            // Placeholder for future functionality
+        });
+
+        returnToHomePageButton.setOnAction(e -> {
+            System.out.println("Return to Homepage button clicked.");
+            EmployeeHomePage empHomePage = new EmployeeHomePage(primaryStage);
+            primaryStage.setScene(new Scene(empHomePage.getRoot(), 1000, 800)); // Increased stage size
+            primaryStage.setTitle("Homepage");
+        });
+    }
+
+    // Function to return the root node
+    public Parent getRoot() {
+        return root;
+    }
+}
