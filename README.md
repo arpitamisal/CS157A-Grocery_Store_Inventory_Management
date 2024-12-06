@@ -13,12 +13,12 @@
 ## Prerequisites for running Project
 1) Download Java 17 SDK
 2) Download JavaFX 17 SDK
-   Configure the Buildpath to include the JavaFX libraries
-   File => Project Structure => Libraries
-   In Eclipse: Add the JavaFX SDK JARs to the BuildPath
+  ,Configure the Buildpath to include the JavaFX libraries
+   ,File => Project Structure => Libraries
+   ,In Eclipse: Add the JavaFX SDK JARs to the BuildPath
 3) Setup VM Options
-   Add the necessary VM options to run JavaFX:
-   Text: --module_path/path/to/javafx-sdk/lib--add-modules javafx.controls,javafx.controls,javafx.fxml
+   ,Add the necessary VM options to run JavaFX:
+   ,Text: --module_path/path/to/javafx-sdk/lib--add-modules javafx.controls,javafx.controls,javafx.fxml
 ## Goals of project
 The goals of this project is to make an interactive application that provides services in inventory and order maangement for grocery store items. It provides information for products, track inventory, process orders, manage discounts, view employee information, store locations, and view supplier details. 
 ## EER Diagram
