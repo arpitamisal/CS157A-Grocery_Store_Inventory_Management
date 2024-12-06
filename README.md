@@ -1,7 +1,7 @@
 # CS157A-Grocery_Store_Inventory_Management
   ## Project Summary
   The application created features an employee managed system to place orders, manage suppliers, products, customer information, generating reports and discounts. The processing orders pages features view customer orders, and update order status. The manage discounts page allows for the creation, updating, viewing and deletion of discounts. The employee page allows for viewing, editing, addition, and deletion of employee profiles. Track inventory allows for tracking stock levels and updating stock quantity. The view supplier details allows for viewing suppliers, placing orders, and tracking orders. The manage products allows for viewing, addition, updating, and deletion of products.
-  ## division of work
+  ## Division of Work
   - Alejandro: brainstormed, created eer draft, started on front-end, continued working on frontend, monitired db performance
   - Blake: brainstormed, split up roles, prepared sample data, set up db, worked up on user interface, Contributed to EER final Diagram
   - Arpita: created repo/brainstormed, started on design aspect, finalized ui/ux design, prepared graphics for presentation
@@ -9,7 +9,7 @@
   - Bhavya: brainstormed, rough drafts of final report, collaborated with front-end for inventory, added to front-end design, finalized all front-end componenets and polished user interaface
   
 
-## prerequisites for running project
+## Prerequisites for running Project
 In order to run the program properly, please install the following dependencies:
 - JavaFX
 - Eclipse
