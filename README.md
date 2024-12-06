@@ -26,5 +26,5 @@ The goals of this project is to make an interactive application that provides se
 
 ## Link to Presentation Video
 
-[Click here for presentation!](https://img.youtube.com/vi/J8ENdFU3oec/0.jpg)
+[![Watch the video](https://img.youtube.com/vi/J8ENdFU3oec/0.jpg)](https://www.youtube.com/watch?v=J8ENdFU3oec)
 
