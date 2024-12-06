@@ -1,6 +1,7 @@
 # CS157A-Grocery_Store_Inventory_Management
   ## Project Summary
-  The application created features an employee managed system to place orders, manage suppliers, products, customer information, generating reports and discounts. The processing orders pages features view customer orders, and update order status. The manage discounts page allows for the creation, updating, viewing and deletion of discounts. The employee page allows for viewing, editing, addition, and deletion of employee profiles. Track inventory allows for tracking stock levels and updating stock quantity. The view supplier details allows for viewing suppliers, placing orders, and tracking orders. The manage products allows for viewing, addition, updating, and deletion of products.
+  The application created features an employee managed system to place orders, manage suppliers,manage products,track inventory,manage discounts, view employee information, and store locations. The managing products pages features view, add, update, and delete product. The track inventory allows for tracking of stock levels and updating stock quantity. The process orders page allows for the viewing of customer orders and updating of order status. The manage discount page allowed for view, create, update, and delete discounts. There is also an employee information page which has view employee profiles, edit selected employee, add employee, and delete selected employee. The store location is add store, edit store, and remove store. The supplier detail page allows for view, add and delete supplier. 
+  
   ## Division of Work
   - Alejandro: brainstormed, created eer draft, started on front-end, continued working on frontend, monitired db performance
   - Blake: brainstormed, split up roles, prepared sample data, set up db, worked up on user interface, Contributed to EER final Diagram
@@ -10,19 +11,19 @@
   
 
 ## Prerequisites for running Project
-In order to run the program properly, please install the following dependencies:
-- JavaFX
-- Eclipse
-- MySQL
-- Java SDK
+1) Download Java 17 SDK
+2) Download JavaFX 17 SDK
+   Configure the Buildpath to include the JavaFX libraries
+   File => Project Structure => Libraries
+   In Eclipse: Add the JavaFX SDK JARs to the BuildPath
+3) Setup VM Options
+   Add the necessary VM options to run JavaFX:
+   Text: --module_path/path/to/javafx-sdk/lib--add-modules javafx.controls,javafx.controls,javafx.fxml
 ## Goals of project
-The goals of this project is to make an interactive application that provides services in inventory and order maangement for grocery store items. Additionally, the program allows for stock tracking. customer orders, supplier management and ? Each page will have buttons allowing for removal, addition, updating and viewing for each item. Reports will be generated allowing for information on sales, report
+The goals of this project is to make an interactive application that provides services in inventory and order maangement for grocery store items. It provides information for products, track inventory, process orders, manage discounts, view employee information, store locations, and view supplier details. 
 ## EER Diagram
 ![image](https://github.com/user-attachments/assets/bb82fa83-d09c-41cf-a044-56fd177f47bc)
 
-
-## SQL Queries
-screenshots and or description of testing using the tables for querying data
 ## Link to Presentation Video
 possible link or play window for watching presentation
 
