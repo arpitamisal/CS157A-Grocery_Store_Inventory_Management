@@ -1,0 +1,184 @@
+package Pages;
+
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.stage.Stage;
+import models.Product;
+import application.DatabaseUtility;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class ManageProduct {
+
+    private final VBox root;
+    private final VBox buttons;
+    private final HBox mainLayout;
+    private final Stage primaryStage;
+    private final TableView<Product> productTable;
+
+    public ManageProduct(Stage primaryStage) {
+
+        this.primaryStage = primaryStage;
+        buttons = new VBox(20);
+        root = new VBox(20);
+        root.setPadding(new Insets(10));
+        root.setAlignment(Pos.TOP_CENTER);
+        root.setStyle("-fx-background-color: cornflowerblue;");
+
+        // Title
+        Label mainLabel = new Label("Manage Products");
+        mainLabel.setStyle("-fx-font-size: 24px;");
+
+        // Search bar
+        HBox searchBar = new HBox(10);
+        searchBar.setAlignment(Pos.CENTER_LEFT);
+        TextField searchField = new TextField();
+        searchField.setPromptText("Search products...");
+        Button searchButton = new Button("Search");
+        searchBar.getChildren().addAll(searchField, searchButton);
+
+        // Buttons for actions
+        Button searchProductButton = new Button("Search Products");
+        Button addProductButton = new Button("Add Product");
+        Button updateProductButton = new Button("Update Product");
+        Button deleteProductButton = new Button("Delete Product");
+        Button returnToHomePageButton = new Button("Return to Homepage");
+
+        buttons.getChildren().addAll(searchProductButton, addProductButton, updateProductButton, deleteProductButton, returnToHomePageButton);
+        buttons.setAlignment(Pos.TOP_LEFT);
+
+        // TableView for displaying products
+        productTable = new TableView<>();
+        productTable.setPrefWidth(800);
+        productTable.setPlaceholder(new Label("No products found."));
+        setupTableColumns();
+
+        // Layout: Buttons on the left, TableView on the right
+        mainLayout = new HBox(20, buttons, productTable);
+        mainLayout.setAlignment(Pos.TOP_LEFT);
+
+        // Add components to the root
+        root.getChildren().addAll(mainLabel, searchBar, mainLayout);
+
+        // Set button actions
+        setButtonActions(searchField, searchButton, searchProductButton, addProductButton, updateProductButton, deleteProductButton, returnToHomePageButton);
+    }
+
+    private void setupTableColumns() {
+        TableColumn<Product, Integer> idColumn = new TableColumn<>("Product ID");
+        idColumn.setCellValueFactory(data -> new SimpleIntegerProperty(data.getValue().getProductId()).asObject());
+        idColumn.setPrefWidth(100);
+
+        TableColumn<Product, String> nameColumn = new TableColumn<>("Product Name");
+        nameColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getProductName()));
+        nameColumn.setPrefWidth(150);
+
+        TableColumn<Product, Integer> categoryIdColumn = new TableColumn<>("Category ID");
+        categoryIdColumn.setCellValueFactory(data -> new SimpleIntegerProperty(data.getValue().getCategoryId()).asObject());
+        categoryIdColumn.setPrefWidth(100);
+
+        TableColumn<Product, Double> priceColumn = new TableColumn<>("Price");
+        priceColumn.setCellValueFactory(data -> new SimpleDoubleProperty(data.getValue().getPrice()).asObject());
+        priceColumn.setPrefWidth(100);
+
+        TableColumn<Product, String> expirationDateColumn = new TableColumn<>("Expiration Date");
+        expirationDateColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getExpirationDate().toString()));
+        expirationDateColumn.setPrefWidth(150);
+
+        TableColumn<Product, Integer> stockQuantityColumn = new TableColumn<>("Stock Quantity");
+        stockQuantityColumn.setCellValueFactory(data -> new SimpleIntegerProperty(data.getValue().getStockQuantity()).asObject());
+        stockQuantityColumn.setPrefWidth(150);
+
+        // Adding columns in the new order
+        productTable.getColumns().addAll(idColumn, nameColumn, categoryIdColumn, priceColumn, expirationDateColumn, stockQuantityColumn);
+    }
+
+    // Other methods remain unchanged
+    private void setButtonActions(TextField searchField, Button searchButton, Button searchProductButton,
+                                   Button addProductButton, Button updateProductButton, Button deleteProductButton,
+                                   Button returnToHomePageButton) {
+
+        searchButton.setOnAction(e -> {
+            String searchText = searchField.getText();
+            if (!searchText.isEmpty()) {
+                productTable.getItems().clear();
+                searchProducts(searchText);
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING, "Search field is empty. Please enter a search term.", ButtonType.OK);
+                alert.showAndWait();
+            }
+        });
+
+        searchProductButton.setOnAction(e -> productTable.getItems().clear());
+
+        addProductButton.setOnAction(e -> showAddProductDialog());
+
+        updateProductButton.setOnAction(e -> {
+            Product selectedProduct = productTable.getSelectionModel().getSelectedItem();
+            if (selectedProduct != null) {
+                showEditProductDialog(selectedProduct);
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING, "Please select a product to update.", ButtonType.OK);
+                alert.showAndWait();
+            }
+        });
+
+        deleteProductButton.setOnAction(e -> {
+            Product selectedProduct = productTable.getSelectionModel().getSelectedItem();
+            if (selectedProduct != null) {
+                deleteProduct(selectedProduct);
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING, "Please select a product to delete.", ButtonType.OK);
+                alert.showAndWait();
+            }
+        });
+
+        returnToHomePageButton.setOnAction(e -> {
+            EmployeeHomePage empHomePage = new EmployeeHomePage(primaryStage);
+            primaryStage.setScene(new Scene(empHomePage.getRoot(), 600, 600));
+            primaryStage.setTitle("Homepage");
+        });
+    }
+
+    // Database operations: insertProduct, updateProduct, deleteProduct, searchProducts, loadAllProducts
+    private void searchProducts(String searchText) {
+        String sql = "SELECT * FROM Product WHERE product_name LIKE ?";
+        try (Connection connection = DatabaseUtility.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            preparedStatement.setString(1, "%" + searchText + "%");
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                Product product = new Product(
+                        resultSet.getInt("product_id"),
+                        resultSet.getString("product_name"),
+                        resultSet.getInt("category_id"),
+                        resultSet.getDouble("price"),
+                        resultSet.getInt("stock_quantity"),
+                        resultSet.getDate("expiration_date")
+                );
+                productTable.getItems().add(product);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Other database methods like showAddProductDialog, showEditProductDialog, insertProduct, updateProduct, deleteProduct, loadAllProducts remain unchanged
+
+    public Parent getRoot() {
+        return root;
+    }
+}

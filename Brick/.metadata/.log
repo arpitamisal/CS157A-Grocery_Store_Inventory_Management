@@ -1,0 +1,1015 @@
+!SESSION 2024-12-02 12:53:20.962 -----------------------------------------------
+eclipse.buildId=4.33.0.20240905-0613
+java.version=21.0.4
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/alexgarcia/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -product org.eclipse.epp.package.java.product -keyring /Users/alexgarcia/.eclipse_keyring
+
+!ENTRY ch.qos.logback.classic 1 0 2024-12-02 12:53:21.716
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-12-02 12:53:32.454
+!MESSAGE Logback config file: /Users/alexgarcia/Desktop/Brick/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.6.1.20240411-1122.xml
+!SESSION 2024-12-02 15:38:56.332 -----------------------------------------------
+eclipse.buildId=4.33.0.20240905-0613
+java.version=21.0.4
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/alexgarcia/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -product org.eclipse.epp.package.java.product -keyring /Users/alexgarcia/.eclipse_keyring
+
+!ENTRY ch.qos.logback.classic 1 0 2024-12-02 15:38:57.376
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.core.resources 4 567 2024-12-02 15:39:21.243
+!MESSAGE Workspace restored, but some problems occurred.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2024-12-02 15:39:21.243
+!MESSAGE Could not read metadata for 'BrickbyBrick'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException(/BrickbyBrick)[567]: java.lang.Exception: The project description file (.project) for 'BrickbyBrick' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:970)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:954)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:934)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:790)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1616)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2618)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2319)
+	at org.eclipse.core.resources.ResourcesPlugin$WorkspaceInitCustomizer.addingService(ResourcesPlugin.java:591)
+	at org.eclipse.core.resources.ResourcesPlugin$WorkspaceInitCustomizer.addingService(ResourcesPlugin.java:1)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:947)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:257)
+	at org.osgi.util.tracker.AbstractTracked.trackInitial(AbstractTracked.java:184)
+	at org.osgi.util.tracker.ServiceTracker.open(ServiceTracker.java:324)
+	at org.osgi.util.tracker.ServiceTracker.open(ServiceTracker.java:267)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:565)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$2.run(BundleContextImpl.java:833)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$2.run(BundleContextImpl.java:1)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:825)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:775)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:1057)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:387)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:639)
+	at org.eclipse.osgi.container.Module.start(Module.java:498)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:528)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:122)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:620)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:348)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:414)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:41)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass0(BundleLoader.java:516)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:434)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:174)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:153)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2024-12-02 15:39:21.245
+!MESSAGE The project description file (.project) for 'BrickbyBrick' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!STACK 0
+java.lang.Exception: The project description file (.project) for 'BrickbyBrick' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:970)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:954)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:934)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:790)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1616)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2618)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2319)
+	at org.eclipse.core.resources.ResourcesPlugin$WorkspaceInitCustomizer.addingService(ResourcesPlugin.java:591)
+	at org.eclipse.core.resources.ResourcesPlugin$WorkspaceInitCustomizer.addingService(ResourcesPlugin.java:1)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:947)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:257)
+	at org.osgi.util.tracker.AbstractTracked.trackInitial(AbstractTracked.java:184)
+	at org.osgi.util.tracker.ServiceTracker.open(ServiceTracker.java:324)
+	at org.osgi.util.tracker.ServiceTracker.open(ServiceTracker.java:267)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:565)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$2.run(BundleContextImpl.java:833)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$2.run(BundleContextImpl.java:1)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:825)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:775)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:1057)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:387)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:639)
+	at org.eclipse.osgi.container.Module.start(Module.java:498)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:528)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:122)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:620)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:348)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:414)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:41)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass0(BundleLoader.java:516)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:434)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:174)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:153)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+
+!ENTRY ch.qos.logback.classic 1 0 2024-12-02 15:39:21.378
+!MESSAGE Logback config file: /Users/alexgarcia/Desktop/Brick/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.6.1.20240411-1122.xml
+
+!ENTRY org.eclipse.core.resources 4 567 2024-12-02 15:39:34.980
+!MESSAGE The project description file (.project) for 'BrickbyBrick' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!STACK 0
+java.lang.Exception: The project description file (.project) for 'BrickbyBrick' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:970)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:954)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:829)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:1109)
+	at org.eclipse.ui.actions.OpenResourceAction$1.doOpenWithReferences(OpenResourceAction.java:233)
+	at org.eclipse.ui.actions.OpenResourceAction$1.runInWorkspace(OpenResourceAction.java:279)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2024-12-02 16:53:49.659 -----------------------------------------------
+eclipse.buildId=4.33.0.20240905-0613
+java.version=21.0.4
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/alexgarcia/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -product org.eclipse.epp.package.java.product -keyring /Users/alexgarcia/.eclipse_keyring
+
+!ENTRY ch.qos.logback.classic 1 0 2024-12-02 16:53:50.429
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-12-02 16:56:18.664
+!MESSAGE Logback config file: /Users/alexgarcia/Desktop/Brick/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.6.1.20240411-1122.xml
+!SESSION 2024-12-02 17:07:30.855 -----------------------------------------------
+eclipse.buildId=4.33.0.20240905-0613
+java.version=21.0.4
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/alexgarcia/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -product org.eclipse.epp.package.java.product -keyring /Users/alexgarcia/.eclipse_keyring
+
+!ENTRY ch.qos.logback.classic 1 0 2024-12-02 17:07:31.733
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-12-02 17:07:34.452
+!MESSAGE Logback config file: /Users/alexgarcia/Desktop/Brick/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.6.1.20240411-1122.xml
+!SESSION 2024-12-02 17:08:32.599 -----------------------------------------------
+eclipse.buildId=4.33.0.20240905-0613
+java.version=21.0.4
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/alexgarcia/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -product org.eclipse.epp.package.java.product -keyring /Users/alexgarcia/.eclipse_keyring -data /Users/alexgarcia/Desktop/Brick
+
+!ENTRY ch.qos.logback.classic 1 0 2024-12-02 17:08:33.326
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-12-02 17:08:33.983
+!MESSAGE Logback config file: /Users/alexgarcia/Desktop/Brick/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.6.1.20240411-1122.xml
+
+!ENTRY org.eclipse.core.resources 4 567 2024-12-02 17:08:46.773
+!MESSAGE The project description file (.project) for 'BrickbyBrick' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!STACK 0
+java.lang.Exception: The project description file (.project) for 'BrickbyBrick' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:970)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:954)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:829)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:1109)
+	at org.eclipse.ui.actions.OpenResourceAction$1.doOpenWithReferences(OpenResourceAction.java:233)
+	at org.eclipse.ui.actions.OpenResourceAction$1.runInWorkspace(OpenResourceAction.java:279)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2024-12-02 17:14:21.330 -----------------------------------------------
+eclipse.buildId=4.33.0.20240905-0613
+java.version=21.0.4
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/alexgarcia/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -product org.eclipse.epp.package.java.product -keyring /Users/alexgarcia/.eclipse_keyring -data file:/Users/alexgarcia/Desktop/Brick/
+
+!ENTRY ch.qos.logback.classic 1 0 2024-12-02 17:14:22.493
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-12-02 17:14:23.525
+!MESSAGE Logback config file: /Users/alexgarcia/Desktop/Brick/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.6.1.20240411-1122.xml
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:09.266
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:09.266
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:09.266
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:09.266
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:09.266
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:09.266
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:09.267
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:09.268
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:09.269
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:09.269
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:09.269
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:09.269
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:09.269
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 150 2024-12-02 17:45:09.273
+!MESSAGE Unable to locate executable for OpenJDK 23.0.1 [23.0.1]
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:18.613
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:18.613
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:18.613
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:18.614
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:18.614
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:18.614
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:18.614
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:18.615
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:18.615
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:18.615
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:18.615
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:18.616
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:45:18.616
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 150 2024-12-02 17:45:18.616
+!MESSAGE Unable to locate executable for OpenJDK 23.0.1 [23.0.1]
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.711
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.728
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.763
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.763
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.763
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.771
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.771
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.771
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.771
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.771
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.771
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.772
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.772
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.772
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.969
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.969
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.969
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.971
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.971
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.971
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.971
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.972
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.972
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.972
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.972
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:44.972
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:46.056
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:46.057
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:46.057
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:46.058
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:46.262
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:46.262
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:46.262
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:46.263
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:46.263
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:47.588
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:47.590
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:47.591
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:47.591
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:47.592
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:49.456
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:49.458
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:49.458
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:49.462
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:49.463
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:50.430
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:50.430
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:50.430
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:50.430
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:50.430
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:50.431
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:50.431
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:50.431
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:50.431
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:50.431
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:50.431
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:50.432
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:50.432
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 150 2024-12-02 17:47:50.432
+!MESSAGE Unable to locate executable for OpenJDK 23.0.1 [23.0.1]
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:57.674
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:57.677
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:57.682
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:57.683
+!MESSAGE Unable to locate executable for OpenJDK 23.0.1 [23.0.1]
+!STACK 1
+org.eclipse.core.runtime.CoreException: Unable to locate executable for OpenJDK 23.0.1 [23.0.1]
+	at org.eclipse.jdt.launching.AbstractVMRunner.abort(AbstractVMRunner.java:56)
+	at org.eclipse.jdt.internal.launching.StandardVMRunner.constructProgramString(StandardVMRunner.java:275)
+	at org.eclipse.jdt.internal.launching.StandardVMRunner.getCommandLine(StandardVMRunner.java:442)
+	at org.eclipse.jdt.internal.launching.StandardVMRunner.run(StandardVMRunner.java:528)
+	at org.eclipse.jdt.launching.AbstractVMInstall.evaluateSystemProperties(AbstractVMInstall.java:390)
+	at org.eclipse.jdt.internal.launching.environments.ExecutionEnvironmentAnalyzer.isFoundation1_0(ExecutionEnvironmentAnalyzer.java:227)
+	at org.eclipse.jdt.internal.launching.environments.ExecutionEnvironmentAnalyzer.analyze(ExecutionEnvironmentAnalyzer.java:133)
+	at org.eclipse.jdt.internal.launching.environments.Analyzer.analyze(Analyzer.java:43)
+	at org.eclipse.jdt.internal.launching.environments.EnvironmentsManager.analyze(EnvironmentsManager.java:430)
+	at org.eclipse.jdt.internal.launching.environments.EnvironmentsManager.vmAdded(EnvironmentsManager.java:472)
+	at org.eclipse.jdt.launching.JavaRuntime.fireVMAdded(JavaRuntime.java:2937)
+	at org.eclipse.jdt.launching.VMStandin.convertToRealVM(VMStandin.java:135)
+	at org.eclipse.jdt.internal.debug.ui.jres.JREsPreferencePage.getVersionFromRealVM(JREsPreferencePage.java:281)
+	at org.eclipse.jdt.internal.debug.ui.jres.JREsPreferencePage.supportsCurrentCompliance(JREsPreferencePage.java:262)
+	at org.eclipse.jdt.internal.debug.ui.jres.JREsPreferencePage.validateComplianceAndJRE(JREsPreferencePage.java:195)
+	at org.eclipse.jdt.internal.debug.ui.jres.JREsPreferencePage.isValid(JREsPreferencePage.java:189)
+	at org.eclipse.jface.preference.PreferenceDialog.isCurrentPageValid(PreferenceDialog.java:868)
+	at org.eclipse.jface.preference.PreferenceDialog.updateButtons(PreferenceDialog.java:1321)
+	at org.eclipse.jface.preference.PreferenceDialog.update(PreferenceDialog.java:1313)
+	at org.eclipse.jface.preference.PreferenceDialog.showPage(PreferenceDialog.java:1268)
+	at org.eclipse.ui.internal.dialogs.FilteredPreferenceDialog.showPage(FilteredPreferenceDialog.java:618)
+	at org.eclipse.jface.preference.PreferenceDialog$5.lambda$0(PreferenceDialog.java:660)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.jface.preference.PreferenceDialog$5.selectionChanged(PreferenceDialog.java:657)
+	at org.eclipse.jface.viewers.StructuredViewer$3.run(StructuredViewer.java:820)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:174)
+	at org.eclipse.jface.viewers.StructuredViewer.firePostSelectionChanged(StructuredViewer.java:817)
+	at org.eclipse.jface.viewers.ColumnViewer.firePostSelectionChanged(ColumnViewer.java:1065)
+	at org.eclipse.jface.viewers.StructuredViewer.setSelection(StructuredViewer.java:1665)
+	at org.eclipse.jface.viewers.TreeViewer.setSelection(TreeViewer.java:1091)
+	at org.eclipse.jface.preference.PreferenceDialog.selectSavedItem(PreferenceDialog.java:990)
+	at org.eclipse.ui.internal.dialogs.FilteredPreferenceDialog.selectSavedItem(FilteredPreferenceDialog.java:668)
+	at org.eclipse.jface.preference.PreferenceDialog.lambda$0(PreferenceDialog.java:348)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.jface.preference.PreferenceDialog.createContents(PreferenceDialog.java:345)
+	at org.eclipse.jface.window.Window.create(Window.java:431)
+	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1092)
+	at org.eclipse.ui.internal.dialogs.WorkbenchPreferenceDialog.createDialogOn(WorkbenchPreferenceDialog.java:88)
+	at org.eclipse.ui.dialogs.PreferencesUtil.createPreferenceDialogOn(PreferencesUtil.java:180)
+	at org.eclipse.ui.dialogs.PreferencesUtil.createPreferenceDialogOn(PreferencesUtil.java:114)
+	at org.eclipse.ui.internal.handlers.ShowPreferencePageHandler.execute(ShowPreferencePageHandler.java:57)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:277)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:299)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:233)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:174)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:165)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:488)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:485)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:204)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:186)
+	at org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler.runCommand(CocoaUIHandler.java:421)
+	at org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler$1.widgetSelected(CocoaUIHandler.java:281)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:265)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4660)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1622)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1645)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1630)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1392)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4427)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4003)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+!SUBENTRY 1 org.eclipse.jdt.launching 4 150 2024-12-02 17:47:57.684
+!MESSAGE Unable to locate executable for OpenJDK 23.0.1 [23.0.1]
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:47:57.684
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:48:00.340
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:48:00.342
+!MESSAGE Unable to locate executable for OpenJDK 23.0.1 [23.0.1]
+!STACK 1
+org.eclipse.core.runtime.CoreException: Unable to locate executable for OpenJDK 23.0.1 [23.0.1]
+	at org.eclipse.jdt.launching.AbstractVMRunner.abort(AbstractVMRunner.java:56)
+	at org.eclipse.jdt.internal.launching.StandardVMRunner.constructProgramString(StandardVMRunner.java:275)
+	at org.eclipse.jdt.internal.launching.StandardVMRunner.getCommandLine(StandardVMRunner.java:442)
+	at org.eclipse.jdt.internal.launching.StandardVMRunner.run(StandardVMRunner.java:528)
+	at org.eclipse.jdt.launching.AbstractVMInstall.evaluateSystemProperties(AbstractVMInstall.java:390)
+	at org.eclipse.jdt.internal.launching.environments.ExecutionEnvironmentAnalyzer.isFoundation1_0(ExecutionEnvironmentAnalyzer.java:227)
+	at org.eclipse.jdt.internal.launching.environments.ExecutionEnvironmentAnalyzer.analyze(ExecutionEnvironmentAnalyzer.java:133)
+	at org.eclipse.jdt.internal.launching.environments.Analyzer.analyze(Analyzer.java:43)
+	at org.eclipse.jdt.internal.launching.environments.EnvironmentsManager.analyze(EnvironmentsManager.java:430)
+	at org.eclipse.jdt.internal.launching.environments.EnvironmentsManager.vmAdded(EnvironmentsManager.java:472)
+	at org.eclipse.jdt.launching.JavaRuntime.fireVMAdded(JavaRuntime.java:2937)
+	at org.eclipse.jdt.launching.VMStandin.convertToRealVM(VMStandin.java:135)
+	at org.eclipse.jdt.internal.debug.ui.jres.JREsPreferencePage.getVersionFromRealVM(JREsPreferencePage.java:281)
+	at org.eclipse.jdt.internal.debug.ui.jres.JREsPreferencePage.supportsCurrentCompliance(JREsPreferencePage.java:262)
+	at org.eclipse.jdt.internal.debug.ui.jres.JREsPreferencePage.validateComplianceAndJRE(JREsPreferencePage.java:195)
+	at org.eclipse.jdt.internal.debug.ui.jres.JREsPreferencePage.isValid(JREsPreferencePage.java:189)
+	at org.eclipse.jface.preference.PreferenceDialog.isCurrentPageValid(PreferenceDialog.java:868)
+	at org.eclipse.jface.preference.PreferenceDialog$5.lambda$0(PreferenceDialog.java:658)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.jface.preference.PreferenceDialog$5.selectionChanged(PreferenceDialog.java:657)
+	at org.eclipse.jface.viewers.StructuredViewer$3.run(StructuredViewer.java:820)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:174)
+	at org.eclipse.jface.viewers.StructuredViewer.firePostSelectionChanged(StructuredViewer.java:817)
+	at org.eclipse.jface.viewers.ColumnViewer.firePostSelectionChanged(ColumnViewer.java:1065)
+	at org.eclipse.jface.viewers.StructuredViewer.handlePostSelect(StructuredViewer.java:1185)
+	at org.eclipse.swt.events.SelectionListener$1.widgetSelected(SelectionListener.java:84)
+	at org.eclipse.jface.util.OpenStrategy.firePostSelectionEvent(OpenStrategy.java:283)
+	at org.eclipse.jface.util.OpenStrategy$1.lambda$1(OpenStrategy.java:437)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4382)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4005)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:823)
+	at org.eclipse.jface.window.Window.open(Window.java:799)
+	at org.eclipse.ui.internal.handlers.ShowPreferencePageHandler.execute(ShowPreferencePageHandler.java:58)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:277)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:299)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:233)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:174)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:165)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:488)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:485)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:204)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:186)
+	at org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler.runCommand(CocoaUIHandler.java:421)
+	at org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler$1.widgetSelected(CocoaUIHandler.java:281)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:265)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4660)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1622)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1645)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1630)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1392)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4427)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4003)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+!SUBENTRY 1 org.eclipse.jdt.launching 4 150 2024-12-02 17:48:00.342
+!MESSAGE Unable to locate executable for OpenJDK 23.0.1 [23.0.1]
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:48:00.342
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:48:05.821
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:48:05.822
+!MESSAGE Unable to locate executable for OpenJDK 23.0.1 [23.0.1]
+!STACK 1
+org.eclipse.core.runtime.CoreException: Unable to locate executable for OpenJDK 23.0.1 [23.0.1]
+	at org.eclipse.jdt.launching.AbstractVMRunner.abort(AbstractVMRunner.java:56)
+	at org.eclipse.jdt.internal.launching.StandardVMRunner.constructProgramString(StandardVMRunner.java:275)
+	at org.eclipse.jdt.internal.launching.StandardVMRunner.getCommandLine(StandardVMRunner.java:442)
+	at org.eclipse.jdt.internal.launching.StandardVMRunner.run(StandardVMRunner.java:528)
+	at org.eclipse.jdt.launching.AbstractVMInstall.evaluateSystemProperties(AbstractVMInstall.java:390)
+	at org.eclipse.jdt.internal.launching.environments.ExecutionEnvironmentAnalyzer.isFoundation1_0(ExecutionEnvironmentAnalyzer.java:227)
+	at org.eclipse.jdt.internal.launching.environments.ExecutionEnvironmentAnalyzer.analyze(ExecutionEnvironmentAnalyzer.java:133)
+	at org.eclipse.jdt.internal.launching.environments.Analyzer.analyze(Analyzer.java:43)
+	at org.eclipse.jdt.internal.launching.environments.EnvironmentsManager.analyze(EnvironmentsManager.java:430)
+	at org.eclipse.jdt.internal.launching.environments.EnvironmentsManager.vmAdded(EnvironmentsManager.java:472)
+	at org.eclipse.jdt.launching.JavaRuntime.fireVMAdded(JavaRuntime.java:2937)
+	at org.eclipse.jdt.launching.VMStandin.convertToRealVM(VMStandin.java:135)
+	at org.eclipse.jdt.internal.debug.ui.jres.JREsPreferencePage.getVersionFromRealVM(JREsPreferencePage.java:281)
+	at org.eclipse.jdt.internal.debug.ui.jres.JREsPreferencePage.supportsCurrentCompliance(JREsPreferencePage.java:262)
+	at org.eclipse.jdt.internal.debug.ui.jres.JREsPreferencePage.validateComplianceAndJRE(JREsPreferencePage.java:195)
+	at org.eclipse.jdt.internal.debug.ui.jres.JREsPreferencePage.isValid(JREsPreferencePage.java:189)
+	at org.eclipse.jface.preference.PreferencePage.okToLeave(PreferencePage.java:441)
+	at org.eclipse.jdt.internal.debug.ui.jres.JREsPreferencePage.okToLeave(JREsPreferencePage.java:403)
+	at org.eclipse.jface.preference.PreferenceDialog.showPage(PreferenceDialog.java:1176)
+	at org.eclipse.ui.internal.dialogs.FilteredPreferenceDialog.showPage(FilteredPreferenceDialog.java:618)
+	at org.eclipse.jface.preference.PreferenceDialog$5.lambda$0(PreferenceDialog.java:660)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.jface.preference.PreferenceDialog$5.selectionChanged(PreferenceDialog.java:657)
+	at org.eclipse.jface.viewers.StructuredViewer$3.run(StructuredViewer.java:820)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:174)
+	at org.eclipse.jface.viewers.StructuredViewer.firePostSelectionChanged(StructuredViewer.java:817)
+	at org.eclipse.jface.viewers.ColumnViewer.firePostSelectionChanged(ColumnViewer.java:1065)
+	at org.eclipse.jface.viewers.StructuredViewer.handlePostSelect(StructuredViewer.java:1185)
+	at org.eclipse.swt.events.SelectionListener$1.widgetSelected(SelectionListener.java:84)
+	at org.eclipse.jface.util.OpenStrategy.firePostSelectionEvent(OpenStrategy.java:283)
+	at org.eclipse.jface.util.OpenStrategy$1.lambda$1(OpenStrategy.java:437)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4382)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4005)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:823)
+	at org.eclipse.jface.window.Window.open(Window.java:799)
+	at org.eclipse.ui.internal.handlers.ShowPreferencePageHandler.execute(ShowPreferencePageHandler.java:58)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:277)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:299)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:233)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:174)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:165)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:488)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:485)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:204)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:186)
+	at org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler.runCommand(CocoaUIHandler.java:421)
+	at org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler$1.widgetSelected(CocoaUIHandler.java:281)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:265)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4660)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1622)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1645)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1630)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1392)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4427)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4003)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+!SUBENTRY 1 org.eclipse.jdt.launching 4 150 2024-12-02 17:48:05.822
+!MESSAGE Unable to locate executable for OpenJDK 23.0.1 [23.0.1]
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:48:05.822
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:48:18.401
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:48:18.401
+!MESSAGE Unable to locate executable for OpenJDK 23.0.1 [23.0.1]
+!STACK 1
+org.eclipse.core.runtime.CoreException: Unable to locate executable for OpenJDK 23.0.1 [23.0.1]
+	at org.eclipse.jdt.launching.AbstractVMRunner.abort(AbstractVMRunner.java:56)
+	at org.eclipse.jdt.internal.launching.StandardVMRunner.constructProgramString(StandardVMRunner.java:275)
+	at org.eclipse.jdt.internal.launching.StandardVMRunner.getCommandLine(StandardVMRunner.java:442)
+	at org.eclipse.jdt.internal.launching.StandardVMRunner.run(StandardVMRunner.java:528)
+	at org.eclipse.jdt.launching.AbstractVMInstall.evaluateSystemProperties(AbstractVMInstall.java:390)
+	at org.eclipse.jdt.internal.launching.environments.ExecutionEnvironmentAnalyzer.isFoundation1_0(ExecutionEnvironmentAnalyzer.java:227)
+	at org.eclipse.jdt.internal.launching.environments.ExecutionEnvironmentAnalyzer.analyze(ExecutionEnvironmentAnalyzer.java:133)
+	at org.eclipse.jdt.internal.launching.environments.Analyzer.analyze(Analyzer.java:43)
+	at org.eclipse.jdt.internal.launching.environments.EnvironmentsManager.analyze(EnvironmentsManager.java:430)
+	at org.eclipse.jdt.internal.launching.environments.EnvironmentsManager.vmAdded(EnvironmentsManager.java:472)
+	at org.eclipse.jdt.launching.JavaRuntime.fireVMAdded(JavaRuntime.java:2937)
+	at org.eclipse.jdt.launching.VMStandin.convertToRealVM(VMStandin.java:135)
+	at org.eclipse.jdt.internal.debug.ui.jres.JREsPreferencePage.getVersionFromRealVM(JREsPreferencePage.java:281)
+	at org.eclipse.jdt.internal.debug.ui.jres.JREsPreferencePage.supportsCurrentCompliance(JREsPreferencePage.java:262)
+	at org.eclipse.jdt.internal.debug.ui.jres.JREsPreferencePage.validateComplianceAndJRE(JREsPreferencePage.java:195)
+	at org.eclipse.jdt.internal.debug.ui.jres.JREsPreferencePage.isValid(JREsPreferencePage.java:189)
+	at org.eclipse.jface.preference.PreferenceDialog.isCurrentPageValid(PreferenceDialog.java:868)
+	at org.eclipse.jface.preference.PreferenceDialog.updateButtons(PreferenceDialog.java:1321)
+	at org.eclipse.jface.preference.PreferenceDialog.update(PreferenceDialog.java:1313)
+	at org.eclipse.jface.preference.PreferenceDialog.showPage(PreferenceDialog.java:1268)
+	at org.eclipse.ui.internal.dialogs.FilteredPreferenceDialog.showPage(FilteredPreferenceDialog.java:618)
+	at org.eclipse.jface.preference.PreferenceDialog$5.lambda$0(PreferenceDialog.java:660)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.jface.preference.PreferenceDialog$5.selectionChanged(PreferenceDialog.java:657)
+	at org.eclipse.jface.viewers.StructuredViewer$3.run(StructuredViewer.java:820)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:174)
+	at org.eclipse.jface.viewers.StructuredViewer.firePostSelectionChanged(StructuredViewer.java:817)
+	at org.eclipse.jface.viewers.ColumnViewer.firePostSelectionChanged(ColumnViewer.java:1065)
+	at org.eclipse.jface.viewers.StructuredViewer.handlePostSelect(StructuredViewer.java:1185)
+	at org.eclipse.swt.events.SelectionListener$1.widgetSelected(SelectionListener.java:84)
+	at org.eclipse.jface.util.OpenStrategy.firePostSelectionEvent(OpenStrategy.java:283)
+	at org.eclipse.jface.util.OpenStrategy$1.lambda$1(OpenStrategy.java:437)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4382)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4005)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:823)
+	at org.eclipse.jface.window.Window.open(Window.java:799)
+	at org.eclipse.ui.internal.handlers.ShowPreferencePageHandler.execute(ShowPreferencePageHandler.java:58)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:277)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:299)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:233)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:174)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:165)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:488)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:485)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:204)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:186)
+	at org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler.runCommand(CocoaUIHandler.java:421)
+	at org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler$1.widgetSelected(CocoaUIHandler.java:281)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:265)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4660)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1622)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1645)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1630)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1392)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4427)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4003)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+!SUBENTRY 1 org.eclipse.jdt.launching 4 150 2024-12-02 17:48:18.402
+!MESSAGE Unable to locate executable for OpenJDK 23.0.1 [23.0.1]
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-12-02 17:48:18.402
+!MESSAGE Could not determine Java version for location /Library/Java/JavaVirtualMachines/jdk-23.0.1.jdk/Contents/Home.
+
+!ENTRY org.eclipse.jface 4 2 2024-12-02 17:50:54.329
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jface".
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jdt.internal.launching.macosx.MacOSXVMInstall cannot be cast to class org.eclipse.jdt.launching.VMStandin (org.eclipse.jdt.internal.launching.macosx.MacOSXVMInstall is in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @5af65933; org.eclipse.jdt.launching.VMStandin is in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @78708fa6)
+	at org.eclipse.jdt.internal.debug.ui.jres.InstalledJREsBlock.editVM(InstalledJREsBlock.java:813)
+	at org.eclipse.jdt.internal.debug.ui.jres.InstalledJREsBlock$6.doubleClick(InstalledJREsBlock.java:466)
+	at org.eclipse.jface.viewers.StructuredViewer$1.run(StructuredViewer.java:779)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:174)
+	at org.eclipse.jface.viewers.StructuredViewer.fireDoubleClick(StructuredViewer.java:776)
+	at org.eclipse.jface.viewers.StructuredViewer.handleDoubleSelect(StructuredViewer.java:1092)
+	at org.eclipse.jface.viewers.ColumnViewer.handleDoubleSelect(ColumnViewer.java:1033)
+	at org.eclipse.jface.viewers.StructuredViewer$4.widgetDefaultSelected(StructuredViewer.java:1205)
+	at org.eclipse.jface.util.OpenStrategy.fireDefaultSelectionEvent(OpenStrategy.java:271)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:328)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4660)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1622)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1645)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1630)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1392)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4427)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4003)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:823)
+	at org.eclipse.jface.window.Window.open(Window.java:799)
+	at org.eclipse.ui.internal.handlers.ShowPreferencePageHandler.execute(ShowPreferencePageHandler.java:58)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:277)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:299)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:233)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:174)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:165)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:488)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:485)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:204)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:186)
+	at org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler.runCommand(CocoaUIHandler.java:421)
+	at org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler$1.widgetSelected(CocoaUIHandler.java:281)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:265)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4660)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1622)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1645)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1630)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1392)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4427)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4003)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+
+!ENTRY org.eclipse.jface 4 2 2024-12-02 17:51:00.620
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jface".
+!STACK 0
+java.lang.ClassCastException: class org.eclipse.jdt.internal.launching.macosx.MacOSXVMInstall cannot be cast to class org.eclipse.jdt.launching.VMStandin (org.eclipse.jdt.internal.launching.macosx.MacOSXVMInstall is in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @5af65933; org.eclipse.jdt.launching.VMStandin is in unnamed module of loader org.eclipse.osgi.internal.loader.EquinoxClassLoader @78708fa6)
+	at org.eclipse.jdt.internal.debug.ui.jres.InstalledJREsBlock.editVM(InstalledJREsBlock.java:813)
+	at org.eclipse.jdt.internal.debug.ui.jres.InstalledJREsBlock$6.doubleClick(InstalledJREsBlock.java:466)
+	at org.eclipse.jface.viewers.StructuredViewer$1.run(StructuredViewer.java:779)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:174)
+	at org.eclipse.jface.viewers.StructuredViewer.fireDoubleClick(StructuredViewer.java:776)
+	at org.eclipse.jface.viewers.StructuredViewer.handleDoubleSelect(StructuredViewer.java:1092)
+	at org.eclipse.jface.viewers.ColumnViewer.handleDoubleSelect(ColumnViewer.java:1033)
+	at org.eclipse.jface.viewers.StructuredViewer$4.widgetDefaultSelected(StructuredViewer.java:1205)
+	at org.eclipse.jface.util.OpenStrategy.fireDefaultSelectionEvent(OpenStrategy.java:271)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:328)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4660)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1622)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1645)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1630)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1392)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4427)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4003)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:823)
+	at org.eclipse.jface.window.Window.open(Window.java:799)
+	at org.eclipse.ui.internal.handlers.ShowPreferencePageHandler.execute(ShowPreferencePageHandler.java:58)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:277)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:299)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:233)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:174)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:165)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:488)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:485)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:204)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:186)
+	at org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler.runCommand(CocoaUIHandler.java:421)
+	at org.eclipse.e4.ui.workbench.renderers.swt.cocoa.CocoaUIHandler$1.widgetSelected(CocoaUIHandler.java:281)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:265)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4660)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1622)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1645)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1630)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1392)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4427)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:4003)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+
+!ENTRY org.eclipse.core.jobs 2 2 2024-12-05 20:12:05.357
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.eclemma.internal.core.launching.AgentServer RUNNING
+	 at java.base/sun.nio.ch.Net.accept(Native Method)
+	 at java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:748)
+	 at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:698)
+	 at java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:663)
+	 at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:639)
+	 at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+	 at java.base/java.net.ServerSocket.accept(ServerSocket.java:543)
+	 at org.eclipse.eclemma.internal.core.launching.AgentServer.run(AgentServer.java:109)
+	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
