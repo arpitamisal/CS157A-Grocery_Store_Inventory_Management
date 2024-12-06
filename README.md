@@ -25,6 +25,6 @@ The goals of this project is to make an interactive application that provides se
 ![image](https://github.com/user-attachments/assets/bb82fa83-d09c-41cf-a044-56fd177f47bc)
 
 ## Link to Presentation Video (Click Box for presentation!)
-<iframe width="560" height="315" src="https://www.youtube.com/embed/J8ENdFU3oec" frameborder="0" allowfullscreen></iframe>
+[![Watch the video](https://img.youtube.com/vi/J8ENdFU3oec/0.jpg)](https://www.youtube.com/watch?v=J8ENdFU3oec)
 
 
